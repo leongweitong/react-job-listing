@@ -2,7 +2,7 @@
   "jobs": [
     {
       "id": "1",
-      "title": "Senior React Developer",
+      "title": "Senior React Dev",
       "type": "Full-Time",
       "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
       "location": "Boston, MA",
@@ -83,5 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "8480",
+      "title": "Java Developer",
+      "type": "Full-Time",
+      "description": "asdsa",
+      "location": "Johor, Malaysia",
+      "salary": "Under $50K",
+      "company": {
+        "name": "dsadas",
+        "description": "dsada",
+        "contactEmail": "dsadsad@dsa",
+        "contactPhone": "sada"
+      }
     }
-  ]}
+  ]
+}
