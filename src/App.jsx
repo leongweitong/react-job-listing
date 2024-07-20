@@ -7,8 +7,20 @@ import NotFoundPage from './pages/NotFoundPage'
 import JobPage, {jobLoader} from './pages/JobPage'
 import AddJobPage from './pages/AddJobPage'
 import EditJobPage from './pages/EditJobPage'
+import RegisterPage from './pages/RegisterPage'
+import LoginPage from './pages/LoginPage'
 
 const App = () => {
+	// Register User
+	const registerUser = (user) => {
+		console.log(user)
+	}
+
+	// Login User
+	const loginUser = (user) => {
+		console.log(user)
+	}
+
 	// Add new job
 	const addJob = async (newJob) => {
 		const res = await fetch('/api/jobs', {
@@ -45,6 +57,8 @@ const App = () => {
 		createRoutesFromElements(
 			<Route path="/" element={<MainLayout /> }>
 				<Route index element={ <HomePage /> } />
+				<Route path="/register" element={ <RegisterPage registerUser={registerUser} /> } />
+				<Route path="/login" element={ <LoginPage loginUser={loginUser} /> } />
 				<Route path="/jobs" element={ <JobsPage /> } />
 				<Route path="/add-job" element={ <AddJobPage addJobSubmit={addJob} /> } />
 				<Route path="/jobs/:id" element={ <JobPage deleteJob={deleteJob} /> } loader={jobLoader} />
