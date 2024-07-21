@@ -1,7 +1,11 @@
 {
   "users": [
     {
-      "id": "e556"
+      "id": "cd8e",
+      "firstName": "Wei Tong",
+      "lastName": "Leong",
+      "email": "weitong0724@gmail.com",
+      "password": "123456789"
     }
   ],
   "jobs": [

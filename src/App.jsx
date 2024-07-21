@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import MainLayout from './layouts/MainLayout'
@@ -11,15 +11,44 @@ import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 
 const App = () => {
+	const [currentUser, setCurrentUser] = useState(null)
+
+	// Get All Users Data
+	const getAllUser = async () => {
+		const res = await fetch('/api/users')
+		const data = await res.json()
+		return data
+	}
 	// Register User
-	const registerUser = (user) => {
-		console.log(user)
+	const registerUser = async (user) => {
+		const res = await fetch('/api/users', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(user)
+		})
+		return
 	}
 
 	// Login User
-	const loginUser = (user) => {
-		console.log(user)
-	}
+	const loginUser = async (loginUser) => {
+		try {
+			const users = await getAllUser();
+			const user = users.find(user => user.email === loginUser.email && user.password === loginUser.password);
+	
+			if (user) {
+				user.successLogin = true;
+				setCurrentUser(user);
+				return user;
+			} else {
+				return { successLogin: false };
+			}
+		} catch (error) {
+			console.error('Error during login:', error);
+			return { successLogin: false };
+		}
+	};
 
 	// Add new job
 	const addJob = async (newJob) => {
@@ -55,10 +84,16 @@ const App = () => {
 	
 	const router = createBrowserRouter(
 		createRoutesFromElements(
-			<Route path="/" element={<MainLayout /> }>
+			<Route path="/" element={<MainLayout user={currentUser} /> }>
 				<Route index element={ <HomePage /> } />
-				<Route path="/register" element={ <RegisterPage registerUser={registerUser} /> } />
-				<Route path="/login" element={ <LoginPage loginUser={loginUser} /> } />
+				{
+					!currentUser && (
+						<>
+							<Route path="/register" element={ <RegisterPage registerUser={registerUser} /> } />
+							<Route path="/login" element={ <LoginPage loginUser={loginUser} /> } />
+						</>
+					)
+				}
 				<Route path="/jobs" element={ <JobsPage /> } />
 				<Route path="/add-job" element={ <AddJobPage addJobSubmit={addJob} /> } />
 				<Route path="/jobs/:id" element={ <JobPage deleteJob={deleteJob} /> } loader={jobLoader} />

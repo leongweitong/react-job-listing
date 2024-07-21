@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../assets/images/jobfind-logo.png'
 import {NavLink} from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({user}) => {
 	const linkClass = ({isActive}) => 
 		isActive ? 
 			'bg-black text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2' 
@@ -21,18 +21,11 @@ const Navbar = () => {
 					</NavLink>
 					<div className="md:ml-auto self-center">
 						<div className="flex space-x-2">
-							<NavLink
-							to="/"
-							className={linkClass}
-							>Home</NavLink>
-							<NavLink
-							to="/jobs"
-							className={linkClass}
-							>Jobs</NavLink>
-							<NavLink
-							to="/add-job"
-							className={linkClass}
-							>Add Job</NavLink>
+							<NavLink to="/" className={linkClass}>Home</NavLink>
+							<NavLink to="/jobs" className={linkClass}>Jobs</NavLink>
+							<NavLink to="/add-job" className={linkClass}>Add Job</NavLink>
+							{user && <NavLink to="/logout" className={linkClass}>Logout</NavLink>}
+							{!user && <NavLink to="/login" className={linkClass}>Login</NavLink>}
 						</div>
 					</div>
 				</div>
