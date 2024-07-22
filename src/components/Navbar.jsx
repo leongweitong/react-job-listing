@@ -32,7 +32,7 @@ const Navbar = ({user, logoutUser}) => {
 						<div className="flex space-x-2">
 							<NavLink to="/" className={linkClass}>Home</NavLink>
 							<NavLink to="/jobs" className={linkClass}>Jobs</NavLink>
-							<NavLink to="/add-job" className={linkClass}>Add Job</NavLink>
+							{user && user.isAdmin && <NavLink to="/add-job" className={linkClass}>Add Job</NavLink>}
 							{user && <button type='button' onClick={logout} className='text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Logout</button>}
 							{!user && <NavLink to="/login" className={linkClass}>Login</NavLink>}
 						</div>

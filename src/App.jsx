@@ -98,9 +98,13 @@ const App = () => {
 					)
 				}
 				<Route path="/jobs" element={ <JobsPage /> } />
-				<Route path="/add-job" element={ <AddJobPage addJobSubmit={addJob} /> } />
-				<Route path="/jobs/:id" element={ <JobPage deleteJob={deleteJob} /> } loader={jobLoader} />
-				<Route path="/edit-job/:id" element={ <EditJobPage editJob={editJob} /> } loader={jobLoader} />
+				{
+					currentUser && currentUser.isAdmin && (<>
+						<Route path="/add-job" element={ <AddJobPage addJobSubmit={addJob} /> } />
+						<Route path="/jobs/:id" element={ <JobPage deleteJob={deleteJob} /> } loader={jobLoader} />
+						<Route path="/edit-job/:id" element={ <EditJobPage editJob={editJob} /> } loader={jobLoader} />
+					</>)
+				}
 				<Route path="*" element={ <NotFoundPage /> } />
 			</Route>
 		)

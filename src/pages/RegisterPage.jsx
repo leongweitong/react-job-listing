@@ -7,6 +7,7 @@ const RegisterPage = ({registerUser}) => {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [isAdmin, setIsAdmin] = useState(false)
     const navigate = useNavigate()
 
     const submitForm = (e) => {
@@ -16,7 +17,8 @@ const RegisterPage = ({registerUser}) => {
             firstName,
             lastName,
             email,
-            password
+            password,
+            isAdmin
         }
 
         registerUser(newUser)
@@ -87,6 +89,18 @@ const RegisterPage = ({registerUser}) => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                             />
+                        </div>
+
+                        <div className="mb-4">
+                            <input
+                            type="checkbox"
+                            id="isAdmin"
+                            name="isAdmin"
+                            className="mr-2 cursor-pointer"
+                            value={isAdmin}
+                            onChange={(e) => setIsAdmin(!isAdmin)}
+                            />
+                            <label htmlFor="isAdmin" className="text-gray-700 mb-2 cursor-pointer">Click this, if you are admin.</label>
                         </div>
 
                         <div>
