@@ -19,80 +19,80 @@
   ],
   "categories": [
     {
-        "id": "1",
-        "name": "Accounting"
+      "id": "1",
+      "name": "Accounting"
     },
     {
-        "id": "2",
-        "name": "Administration & Office Support"
+      "id": "2",
+      "name": "Administration & Office Support"
     },
     {
-        "id": "3",
-        "name": "Advertising, Arts & Media"
+      "id": "3",
+      "name": "Advertising, Arts & Media"
     },
     {
-        "id": "4",
-        "name": "Banking & Financial Services"
+      "id": "4",
+      "name": "Banking & Financial Services"
     },
     {
-        "id": "5",
-        "name": "Call Centre & Customer Service"
+      "id": "5",
+      "name": "Call Centre & Customer Service"
     },
     {
-        "id": "6",
-        "name": "CEO & General Management"
+      "id": "6",
+      "name": "CEO & General Management"
     },
     {
-        "id": "7",
-        "name": "Community Services & Development"
+      "id": "7",
+      "name": "Community Services & Development"
     },
     {
-        "id": "8",
-        "name": "Construction"
+      "id": "8",
+      "name": "Construction"
     },
     {
-        "id": "9",
-        "name": "Consulting & Strategy"
+      "id": "9",
+      "name": "Consulting & Strategy"
     },
     {
-        "id": "10",
-        "name": "Design & Architecture"
+      "id": "10",
+      "name": "Design & Architecture"
     },
     {
-        "id": "11",
-        "name": "Education & Training"
+      "id": "11",
+      "name": "Education & Training"
     },
     {
-        "id": "12",
-        "name": "Engineering"
+      "id": "12",
+      "name": "Engineering"
     },
     {
-        "id": "13",
-        "name": "Farming, Animals & Conservation"
+      "id": "13",
+      "name": "Farming, Animals & Conservation"
     },
     {
-        "id": "14",
-        "name": "Government & Defence"
+      "id": "14",
+      "name": "Government & Defence"
     },
     {
-        "id": "15",
-        "name": "Healthcare & Medical"
+      "id": "15",
+      "name": "Healthcare & Medical"
     },
     {
-        "id": "16",
-        "name": "Hospitality & Tourism"
+      "id": "16",
+      "name": "Hospitality & Tourism"
     },
     {
-        "id": "17",
-        "name": "Human Resources & Recruitment"
+      "id": "17",
+      "name": "Human Resources & Recruitment"
     },
     {
-        "id": "18",
-        "name": "Information & Communication Technology"
+      "id": "18",
+      "name": "Information & Communication Technology"
     },
     {
-        "id": "19",
-        "name": "Insurance & Superannuation"
+      "id": "19",
+      "name": "Insurance & Superannuation"
     }
   ],
   "jobs": [
