@@ -45,7 +45,7 @@ const Categories = () => {
 
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
                     {categoriesWithJobCount.map(category => 
-                        <div key={category.id} className="bg-white hover:bg-indigo-500 hover:text-white rounded shadow-md p-2">{category.name} - {category.jobCount} jobs</div>
+                        <div key={category.id} className="bg-white hover:bg-indigo-500 hover:text-white rounded-xl shadow-md p-2">{category.name} - {category.jobCount} jobs</div>
                     )}
                 </div>
             </div>
