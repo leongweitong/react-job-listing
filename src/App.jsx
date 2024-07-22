@@ -50,6 +50,9 @@ const App = () => {
 		}
 	};
 
+	// Logout User
+	const logoutUser = () => setCurrentUser(null)
+
 	// Add new job
 	const addJob = async (newJob) => {
 		const res = await fetch('/api/jobs', {
@@ -84,7 +87,7 @@ const App = () => {
 	
 	const router = createBrowserRouter(
 		createRoutesFromElements(
-			<Route path="/" element={<MainLayout user={currentUser} /> }>
+			<Route path="/" element={<MainLayout user={currentUser} logoutUser={logoutUser} /> }>
 				<Route index element={ <HomePage /> } />
 				{
 					!currentUser && (

@@ -4,10 +4,10 @@ import Navbar from '../components/Navbar'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-const MainLayout = ({user}) => {
+const MainLayout = ({user, logoutUser}) => {
   return (
     <>
-        <Navbar user={user}/>
+        <Navbar user={user} logoutUser={logoutUser} />
         <Outlet />
         <ToastContainer />
     </>

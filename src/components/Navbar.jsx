@@ -1,13 +1,22 @@
 import React from 'react'
 import logo from '../assets/images/jobfind-logo.png'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify'
 
-const Navbar = ({user}) => {
+const Navbar = ({user, logoutUser}) => {
+	const navigate = useNavigate()
+
 	const linkClass = ({isActive}) => 
 		isActive ? 
 			'bg-black text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2' 
 				: 
 			'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
+
+	const logout = () => {
+		logoutUser()
+		toast.success('Logout Successfully.')
+		navigate('/')
+	}
 
 	return (
 		<nav className="bg-indigo-700 border-b border-indigo-500">
@@ -24,7 +33,7 @@ const Navbar = ({user}) => {
 							<NavLink to="/" className={linkClass}>Home</NavLink>
 							<NavLink to="/jobs" className={linkClass}>Jobs</NavLink>
 							<NavLink to="/add-job" className={linkClass}>Add Job</NavLink>
-							{user && <NavLink to="/logout" className={linkClass}>Logout</NavLink>}
+							{user && <button type='button' onClick={logout} className='text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Logout</button>}
 							{!user && <NavLink to="/login" className={linkClass}>Login</NavLink>}
 						</div>
 					</div>
