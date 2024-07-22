@@ -17,6 +17,84 @@
       "isAdmin": false
     }
   ],
+  "categories": [
+    {
+        "id": "1",
+        "name": "Accounting"
+    },
+    {
+        "id": "2",
+        "name": "Administration & Office Support"
+    },
+    {
+        "id": "3",
+        "name": "Advertising, Arts & Media"
+    },
+    {
+        "id": "4",
+        "name": "Banking & Financial Services"
+    },
+    {
+        "id": "5",
+        "name": "Call Centre & Customer Service"
+    },
+    {
+        "id": "6",
+        "name": "CEO & General Management"
+    },
+    {
+        "id": "7",
+        "name": "Community Services & Development"
+    },
+    {
+        "id": "8",
+        "name": "Construction"
+    },
+    {
+        "id": "9",
+        "name": "Consulting & Strategy"
+    },
+    {
+        "id": "10",
+        "name": "Design & Architecture"
+    },
+    {
+        "id": "11",
+        "name": "Education & Training"
+    },
+    {
+        "id": "12",
+        "name": "Engineering"
+    },
+    {
+        "id": "13",
+        "name": "Farming, Animals & Conservation"
+    },
+    {
+        "id": "14",
+        "name": "Government & Defence"
+    },
+    {
+        "id": "15",
+        "name": "Healthcare & Medical"
+    },
+    {
+        "id": "16",
+        "name": "Hospitality & Tourism"
+    },
+    {
+        "id": "17",
+        "name": "Human Resources & Recruitment"
+    },
+    {
+        "id": "18",
+        "name": "Information & Communication Technology"
+    },
+    {
+        "id": "19",
+        "name": "Insurance & Superannuation"
+    }
+  ],
   "jobs": [
     {
       "id": "1",
@@ -25,6 +103,7 @@
       "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
       "location": "Boston, MA",
       "salary": "$70K - $80K",
+      "categoryId": "18",
       "company": {
         "name": "NewTek Solutions",
         "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
@@ -39,6 +118,7 @@
       "description": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
       "location": "Miami, FL",
       "salary": "$70K - $80K",
+      "categoryId": "18",
       "company": {
         "name": "Veneer Solutions",
         "description": "Veneer Solutions is a creative agency specializing in digital design and development. Our team is dedicated to pushing the boundaries of creativity and innovation to deliver exceptional results for our clients.",
@@ -53,6 +133,7 @@
       "location": "Brooklyn, NY",
       "description": "Are you passionate about front-end development? Join our team in vibrant Brooklyn, NY, and work on exciting projects that make a difference. We offer competitive compensation and a collaborative work environment where your ideas are valued.",
       "salary": "$70K - $80K",
+      "categoryId": "18",
       "company": {
         "name": "Dolor Cloud",
         "description": "Dolor Cloud is a leading technology company specializing in digital solutions for businesses of all sizes. With a focus on innovation and customer satisfaction, we are committed to delivering cutting-edge products and services.",
@@ -67,6 +148,7 @@
       "description": "Join our team as a Part-Time Front-End Developer in beautiful Pheonix, AZ. We are looking for a self-motivated individual with a passion for creating engaging user experiences. This position offers flexible hours and the opportunity to work remotely.",
       "location": "Pheonix, AZ",
       "salary": "$60K - $70K",
+      "categoryId": "18",
       "company": {
         "name": "Alpha Elite",
         "description": "Alpha Elite is a dynamic startup specializing in digital marketing and web development. We are committed to fostering a diverse and inclusive workplace where creativity and innovation thrive.",
@@ -81,6 +163,7 @@
       "description": "Exciting opportunity for a Full-Time Front-End Developer in bustling Atlanta, GA. We are seeking a talented individual with a passion for building elegant and scalable web applications. Join our team and make an impact!",
       "location": "Atlanta, GA",
       "salary": "$90K - $100K",
+      "categoryId": "18",
       "company": {
         "name": "Browning Technologies",
         "description": "Browning Technologies is a rapidly growing technology company specializing in e-commerce solutions. We offer a dynamic and collaborative work environment where employees are encouraged to think creatively and innovate.",
@@ -95,6 +178,7 @@
       "description": "Join our team as a Front-End Developer in beautiful Portland, OR. We are looking for a skilled and enthusiastic individual to help us create innovative web solutions. Competitive salary and great benefits package available.",
       "location": "Portland, OR",
       "salary": "$100K - $110K",
+      "categoryId": "18",
       "company": {
         "name": "Port Solutions INC",
         "description": "Port Solutions is a leading technology company specializing in software development and digital marketing. We are committed to providing our clients with cutting-edge solutions and our employees with a supportive and rewarding work environment.",
@@ -103,17 +187,273 @@
       }
     },
     {
-      "id": "ae15",
-      "title": "sdsa",
+      "id": "7",
+      "title": "Accountant",
       "type": "Full-Time",
-      "description": "dsaas",
-      "location": "sadassadd",
-      "salary": "Under $50K",
+      "description": "We are looking for a detail-oriented Accountant to join our finance team in New York, NY. The ideal candidate will have strong analytical skills and a background in accounting or finance.",
+      "location": "New York, NY",
+      "salary": "$50K - $60K",
+      "categoryId": "1",
       "company": {
-        "name": "dsad",
-        "description": "dsadas",
-        "contactEmail": "sdasds@dfasd",
-        "contactPhone": "sda"
+        "name": "FinanceCorp",
+        "description": "FinanceCorp is a leading financial services company offering a range of accounting and financial management services to clients.",
+        "contactEmail": "contact@financecorp.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "8",
+      "title": "Office Administrator",
+      "type": "Full-Time",
+      "description": "Join our team as an Office Administrator in Chicago, IL. We are looking for a highly organized individual to manage office operations and provide support to our staff.",
+      "location": "Chicago, IL",
+      "salary": "$40K - $50K",
+      "categoryId": "2",
+      "company": {
+        "name": "AdminSupport Inc.",
+        "description": "AdminSupport Inc. provides comprehensive office support services to businesses of all sizes.",
+        "contactEmail": "contact@adminsupport.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "9",
+      "title": "Media Planner",
+      "type": "Full-Time",
+      "description": "We are seeking a creative Media Planner to join our team in Los Angeles, CA. The ideal candidate will have experience in advertising and media planning.",
+      "location": "Los Angeles, CA",
+      "salary": "$60K - $70K",
+      "categoryId": "3",
+      "company": {
+        "name": "MediaWave",
+        "description": "MediaWave is a leading advertising agency specializing in media planning and buying services.",
+        "contactEmail": "contact@mediawave.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "10",
+      "title": "Financial Analyst",
+      "type": "Full-Time",
+      "description": "We are looking for a Financial Analyst to join our team in San Francisco, CA. The ideal candidate will have strong analytical skills and experience in financial analysis.",
+      "location": "San Francisco, CA",
+      "salary": "$70K - $80K",
+      "categoryId": "4",
+      "company": {
+        "name": "FinTech Solutions",
+        "description": "FinTech Solutions is a financial technology company providing innovative financial analysis and management solutions.",
+        "contactEmail": "contact@fintechsolutions.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "11",
+      "title": "Customer Service Representative",
+      "type": "Full-Time",
+      "description": "Join our team as a Customer Service Representative in Houston, TX. We are looking for a friendly and helpful individual to assist our customers with their inquiries and concerns.",
+      "location": "Houston, TX",
+      "salary": "$30K - $40K",
+      "categoryId": "5",
+      "company": {
+        "name": "ServiceFirst",
+        "description": "ServiceFirst is a leading customer service provider offering comprehensive support services to businesses and individuals.",
+        "contactEmail": "contact@servicefirst.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "12",
+      "title": "General Manager",
+      "type": "Full-Time",
+      "description": "We are seeking a General Manager to lead our team in Seattle, WA. The ideal candidate will have strong leadership skills and experience in management.",
+      "location": "Seattle, WA",
+      "salary": "$90K - $100K",
+      "categoryId": "6",
+      "company": {
+        "name": "ManageCorp",
+        "description": "ManageCorp is a leading management consultancy providing expert management solutions to businesses.",
+        "contactEmail": "contact@managecorp.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "13",
+      "title": "Community Development Officer",
+      "type": "Full-Time",
+      "description": "Join our team as a Community Development Officer in Denver, CO. We are looking for a passionate individual to work with local communities and support their development initiatives.",
+      "location": "Denver, CO",
+      "salary": "$50K - $60K",
+      "categoryId": "7",
+      "company": {
+        "name": "CommunityFirst",
+        "description": "CommunityFirst is a non-profit organization dedicated to supporting community development and empowerment.",
+        "contactEmail": "contact@communityfirst.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "14",
+      "title": "Construction Project Manager",
+      "type": "Full-Time",
+      "description": "We are seeking a Construction Project Manager to oversee our construction projects in Dallas, TX. The ideal candidate will have experience in construction management and strong organizational skills.",
+      "location": "Dallas, TX",
+      "salary": "$80K - $90K",
+      "categoryId": "8",
+      "company": {
+        "name": "BuildCorp",
+        "description": "BuildCorp is a leading construction company specializing in residential and commercial construction projects.",
+        "contactEmail": "contact@buildcorp.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "15",
+      "title": "Strategy Consultant",
+      "type": "Full-Time",
+      "description": "Join our team as a Strategy Consultant in Boston, MA. We are looking for a strategic thinker with experience in consulting and strategy development.",
+      "location": "Boston, MA",
+      "salary": "$90K - $100K",
+      "categoryId": "9",
+      "company": {
+        "name": "Strategy Solutions",
+        "description": "Strategy Solutions is a leading consultancy providing strategic advice and solutions to businesses.",
+        "contactEmail": "contact@strategysolutions.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "16",
+      "title": "Architect",
+      "type": "Full-Time",
+      "description": "We are seeking a talented Architect to join our team in San Diego, CA. The ideal candidate will have strong design skills and experience in architectural design.",
+      "location": "San Diego, CA",
+      "salary": "$70K - $80K",
+      "categoryId": "10",
+      "company": {
+        "name": "DesignBuild",
+        "description": "DesignBuild is a leading architecture and design firm specializing in innovative and sustainable design solutions.",
+        "contactEmail": "contact@designbuild.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "17",
+      "title": "Teacher",
+      "type": "Full-Time",
+      "description": "Join our team as a Teacher in Austin, TX. We are looking for a dedicated and passionate individual to educate and inspire students.",
+      "location": "Austin, TX",
+      "salary": "$50K - $60K",
+      "categoryId": "11",
+      "company": {
+        "name": "EduFirst",
+        "description": "EduFirst is a leading educational institution committed to providing high-quality education and support to students.",
+        "contactEmail": "contact@edufirst.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "18",
+      "title": "Mechanical Engineer",
+      "type": "Full-Time",
+      "description": "We are seeking a Mechanical Engineer to join our team in Detroit, MI. The ideal candidate will have strong technical skills and experience in mechanical engineering.",
+      "location": "Detroit, MI",
+      "salary": "$80K - $90K",
+      "categoryId": "12",
+      "company": {
+        "name": "Engineered Solutions",
+        "description": "Engineered Solutions is a leading engineering firm providing innovative engineering solutions to clients.",
+        "contactEmail": "contact@engineeredsolutions.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "19",
+      "title": "Conservation Officer",
+      "type": "Full-Time",
+      "description": "Join our team as a Conservation Officer in Bozeman, MT. We are looking for a passionate individual to work on conservation projects and protect natural resources.",
+      "location": "Bozeman, MT",
+      "salary": "$50K - $60K",
+      "categoryId": "13",
+      "company": {
+        "name": "EcoProtect",
+        "description": "EcoProtect is a non-profit organization dedicated to environmental conservation and protection.",
+        "contactEmail": "contact@ecoprotect.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "20",
+      "title": "Government Relations Specialist",
+      "type": "Full-Time",
+      "description": "We are seeking a Government Relations Specialist to join our team in Washington, D.C. The ideal candidate will have experience in government relations and public policy.",
+      "location": "Washington, D.C.",
+      "salary": "$70K - $80K",
+      "categoryId": "14",
+      "company": {
+        "name": "GovConsult",
+        "description": "GovConsult is a leading consultancy specializing in government relations and public policy.",
+        "contactEmail": "contact@govconsult.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "21",
+      "title": "Nurse",
+      "type": "Full-Time",
+      "description": "Join our team as a Nurse in Los Angeles, CA. We are looking for a caring and dedicated individual to provide medical care to patients.",
+      "location": "Los Angeles, CA",
+      "salary": "$60K - $70K",
+      "categoryId": "15",
+      "company": {
+        "name": "HealthCarePlus",
+        "description": "HealthCarePlus is a leading healthcare provider offering comprehensive medical care and support services.",
+        "contactEmail": "contact@healthcareplus.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "22",
+      "title": "Hotel Manager",
+      "type": "Full-Time",
+      "description": "We are seeking a Hotel Manager to oversee operations at our hotel in Las Vegas, NV. The ideal candidate will have strong leadership skills and experience in hospitality management.",
+      "location": "Las Vegas, NV",
+      "salary": "$70K - $80K",
+      "categoryId": "16",
+      "company": {
+        "name": "LuxuryStay",
+        "description": "LuxuryStay is a leading hotel chain offering luxurious accommodations and exceptional service to guests.",
+        "contactEmail": "contact@luxurystay.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "23",
+      "title": "HR Manager",
+      "type": "Full-Time",
+      "description": "Join our team as an HR Manager in Philadelphia, PA. We are looking for a skilled HR professional to manage our human resources department and support our employees.",
+      "location": "Philadelphia, PA",
+      "salary": "$70K - $80K",
+      "categoryId": "17",
+      "company": {
+        "name": "PeopleFirst",
+        "description": "PeopleFirst is a leading HR consultancy providing comprehensive human resources solutions to businesses.",
+        "contactEmail": "contact@peoplefirst.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "24",
+      "title": "Insurance Agent",
+      "type": "Full-Time",
+      "description": "We are seeking an Insurance Agent to join our team in Chicago, IL. The ideal candidate will have strong sales skills and experience in the insurance industry.",
+      "location": "Chicago, IL",
+      "salary": "$50K - $60K",
+      "categoryId": "19",
+      "company": {
+        "name": "InsureTech",
+        "description": "InsureTech is a leading insurance company providing innovative insurance solutions to clients.",
+        "contactEmail": "contact@insuretech.com",
+        "contactPhone": "555-555-5555"
       }
     }
   ]

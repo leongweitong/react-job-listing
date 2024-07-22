@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from '../components/Hero'
 import HomeCards from '../components/HomeCards'
+import Categories from '../components/Categories'
 import JobListings from '../components/JobListings'
 import ViewAllJobs from '../components/ViewAllJobs'
 
@@ -9,6 +10,7 @@ const HomePage = () => {
     <>
         <Hero />
         <HomeCards />
+        <Categories />
         <JobListings isHome={true} />
         <ViewAllJobs />
     </>
