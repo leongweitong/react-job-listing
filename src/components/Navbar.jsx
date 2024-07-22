@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/images/jobfind-logo.png'
 import {NavLink, useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { confirmAlert } from 'react-confirm-alert';
 
 const Navbar = ({user, logoutUser}) => {
 	const navigate = useNavigate()
@@ -13,9 +14,26 @@ const Navbar = ({user, logoutUser}) => {
 			'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
 
 	const logout = () => {
-		logoutUser()
-		toast.success('Logout Successfully.')
-		navigate('/')
+		confirmAlert({
+            title: 'Confirm to logout',
+            message: 'Are you sure you want to logout?',
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => {
+                    logoutUser()
+					toast.success('Logout Successfully.')
+					navigate('/')
+                }
+              },
+              {
+                label: 'Cancel',
+                onClick: () => {
+
+                }
+              }
+            ]
+        })
 	}
 
 	return (
