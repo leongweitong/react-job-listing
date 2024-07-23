@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import MainLayout from './layouts/MainLayout'
@@ -12,6 +12,7 @@ import LoginPage from './pages/LoginPage'
 
 const App = () => {
 	const [currentUser, setCurrentUser] = useState(null)
+	const [categoriesWithJobCount, setCategoriesWithJobCount] = useState([]);
 
 	// Get All Users Data
 	const getAllUser = async () => {
@@ -53,6 +54,43 @@ const App = () => {
 	// Logout User
 	const logoutUser = () => setCurrentUser(null)
 
+	// Get available categories
+    useEffect(() => {
+        const getAvailableCategories = async () => {
+            try {
+                const res = await Promise.allSettled([fetch('/api/jobs'), fetch('/api/categories')]);
+                const jobsResponse = res[0];
+                const categoriesResponse = res[1];
+
+                if (jobsResponse.status === 'fulfilled' && categoriesResponse.status === 'fulfilled') {
+                    const jobsData = await jobsResponse.value.json();
+                    const categoriesData = await categoriesResponse.value.json();
+
+                    // Create a map to count jobs for each category
+                    const jobCountByCategory = jobsData.reduce((acc, job) => {
+                        acc[job.categoryId] = (acc[job.categoryId] || 0) + 1;
+                        return acc;
+                    }, {});
+
+                    // Filter categories that are used in jobs and include job count
+                    const categories = categoriesData
+                        .filter(category => jobCountByCategory[category.id])
+                        .map(category => ({
+                            ...category,
+                            jobCount: jobCountByCategory[category.id],
+                        }));
+
+                    console.log(categories)
+                    setCategoriesWithJobCount(categories);
+                }
+            } catch (error) {
+                console.error('Error during get available job categories:', error);
+            }
+        };
+
+        getAvailableCategories();
+    }, []);
+
 	// Add new job
 	const addJob = async (newJob) => {
 		const res = await fetch('/api/jobs', {
@@ -88,7 +126,7 @@ const App = () => {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path="/" element={<MainLayout user={currentUser} logoutUser={logoutUser} /> }>
-				<Route index element={ <HomePage /> } />
+				<Route index element={ <HomePage categories={categoriesWithJobCount} /> } />
 				{
 					!currentUser && (
 						<>
@@ -97,7 +135,7 @@ const App = () => {
 						</>
 					)
 				}
-				<Route path="/jobs" element={ <JobsPage /> } />
+				<Route path="/jobs" element={ <JobsPage categories={categoriesWithJobCount} /> } />
 				<Route path="/jobs/:id" element={ <JobPage deleteJob={deleteJob} user={currentUser} /> } loader={jobLoader} />
 				{
 					currentUser && currentUser.isAdmin && (<>

@@ -5,12 +5,12 @@ import Categories from '../components/Categories'
 import JobListings from '../components/JobListings'
 import ViewAllJobs from '../components/ViewAllJobs'
 
-const HomePage = () => {
+const HomePage = ({categories}) => {
   return (
     <>
         <Hero />
         <HomeCards />
-        <Categories />
+        <Categories categories={categories} />
         <JobListings isHome={true} />
         <ViewAllJobs />
     </>

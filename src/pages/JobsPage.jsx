@@ -1,10 +1,12 @@
 import React from 'react'
 import JobListings from '../components/JobListings'
+import CategoriesOption from '../components/CategoriesOption'
 
-const JobsPage = () => {
+const JobsPage = ({categories}) => {
   return (
     <section className="bg-blut-50">
-        <JobListings />
+      <CategoriesOption categories={categories}  />
+      <JobListings />
     </section>
   )
 }
