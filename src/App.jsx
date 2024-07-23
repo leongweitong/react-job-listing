@@ -80,7 +80,6 @@ const App = () => {
                             jobCount: jobCountByCategory[category.id],
                         }));
 
-                    console.log(categories)
                     setCategoriesWithJobCount(categories);
                 }
             } catch (error) {
