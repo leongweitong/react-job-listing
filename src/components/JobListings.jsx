@@ -3,18 +3,24 @@ import React from 'react'
 import JobListing from './JobListing'
 import Spinner from './Spinner'
 import CategoriesOption from './CategoriesOption'
+import { Pagination } from "flowbite-react";
 
 const JobListings = ({isHome = false, categories = []}) => {
 	const [jobs, setJobs] = useState([])
 	const [loading, setLoading] = useState(true)
-	const [apiUrl, setApiUrl] = useState(isHome ? '/api/jobs?_limit=3' : '/api/jobs')
+	const [currentPage, setCurrentPage] = useState(1);
+	const [totalPage, setTotalPage] = useState(1);
+	const [categoryid, setCategoryId] = useState('0')
+	const [apiUrl, setApiUrl] = useState(isHome ? `/api/jobs?_limit=3` : `/api/jobs?_page=${currentPage}&_per_page=6`)
 
 	useEffect(() => { 
 		const fetchJobs = async () => {
 			try{
 				const res = await fetch(apiUrl)
 				const data = await res.json()
-				setJobs(data)
+				console.log(data)
+				setTotalPage(data.pages)
+				setJobs(data.data)
 			} catch(err) {
 				console.error('Error fetching data: ', err)
 			} finally{
@@ -24,9 +30,26 @@ const JobListings = ({isHome = false, categories = []}) => {
 		fetchJobs()
 	}, [apiUrl])
 
-	const handleCallback = (categoryid) => {
-        categoryid === 'all' ? setApiUrl('/api/jobs') : setApiUrl(`/api/jobs?categoryId=${categoryid}`)
+	const handleCallback = (id) => {
+		console.log(id)
+		setCategoryId(id)
+		setCurrentPage(1)
+        setApiUrl((prevUrl) => id === '0' 
+			? `/api/jobs?_page=1&_per_page=6`
+			: `/api/jobs?categoryId=${id}&_page=1&_per_page=6`
+		)
     };
+
+	
+
+  	const onPageChange = (page) => {
+		console.log(page)
+		setCurrentPage(page)
+		setApiUrl((prevUrl) => categoryid === '0' 
+			? `/api/jobs?_page=${page}&_per_page=6` 
+			: `/api/jobs?categoryId=${categoryid}&_page=${page}&_per_page=6`
+		)
+	}
 
 	return (
 		<section className="bg-blue-50 px-4 py-10">
@@ -44,6 +67,10 @@ const JobListings = ({isHome = false, categories = []}) => {
 						))}
 					</div>)
 				}
+				</div>
+
+				<div className="flex overflow-x-auto sm:justify-center mt-4">
+					<Pagination currentPage={currentPage} totalPages={totalPage} onPageChange={onPageChange} />
 				</div>
 		</section>
 	)
