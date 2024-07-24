@@ -93,6 +93,10 @@
     {
       "id": "19",
       "name": "Insurance & Superannuation"
+    },
+    {
+      "id": "20",
+      "name": "Legal Counsel"
     }
   ],
   "jobs": [
@@ -454,6 +458,21 @@
         "description": "InsureTech is a leading insurance company providing innovative insurance solutions to clients.",
         "contactEmail": "contact@insuretech.com",
         "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "25",
+      "title": "Senior Legal Counsel",
+      "type": "Full-Time",
+      "description": "We are looking for an experienced Legal Counsel to join our legal team. The ideal candidate will have expertise in corporate law and a strong understanding of regulatory compliance.",
+      "location": "New York, NY",
+      "salary": "$120K - $130K",
+      "categoryId": "20",
+      "company": {
+        "name": "LawTech Firm",
+        "description": "LawTech Firm is a renowned legal services provider known for its innovative approach to legal solutions. Our team is dedicated to delivering exceptional service to our clients while maintaining a supportive work environment.",
+        "contactEmail": "hr@lawtechfirm.com",
+        "contactPhone": "555-123-4567"
       }
     }
   ]
