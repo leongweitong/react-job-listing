@@ -19,8 +19,8 @@ const JobListings = ({isHome = false, categories = []}) => {
 				const res = await fetch(apiUrl)
 				const data = await res.json()
 				console.log(data)
-				setTotalPage(data.pages)
-				setJobs(data.data)
+				setTotalPage(isHome ? 1 : data.pages)
+				setJobs(isHome ? data : data.data)
 			} catch(err) {
 				console.error('Error fetching data: ', err)
 			} finally{
@@ -69,9 +69,9 @@ const JobListings = ({isHome = false, categories = []}) => {
 				}
 				</div>
 
-				<div className="flex overflow-x-auto sm:justify-center mt-4">
+				{totalPage > 1 && <div className="flex overflow-x-auto sm:justify-center mt-4">
 					<Pagination currentPage={currentPage} totalPages={totalPage} onPageChange={onPageChange} />
-				</div>
+				</div>}
 		</section>
 	)
 }
