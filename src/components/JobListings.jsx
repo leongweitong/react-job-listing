@@ -25,7 +25,7 @@ const JobListings = ({isHome = false, categories = []}) => {
 	}, [apiUrl])
 
 	const handleCallback = (categoryid) => {
-        setApiUrl(`/api/jobs?categoryId=${categoryid}`)
+        categoryid === 'all' ? setApiUrl('/api/jobs') : setApiUrl(`/api/jobs?categoryId=${categoryid}`)
     };
 
 	return (
