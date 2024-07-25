@@ -2,8 +2,10 @@ import React, {useState} from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { useGoogleLogin } from '@react-oauth/google';
+import googleIcon from '../assets/images/google.png'
 
-const LoginPage = ({loginUser}) => {
+const LoginPage = ({setCurrentUser, loginUser}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordType, setPasswordType] = useState('password')
@@ -33,6 +35,31 @@ const LoginPage = ({loginUser}) => {
     }
 
     const triggerPassword = () => setPasswordType(passwordType === 'password' ? 'text' : 'password');
+
+    const loginWithGoogle = useGoogleLogin({
+        onSuccess: (codeResponse) => {
+            fetch(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${codeResponse.access_token}`, {
+                headers: {
+                    Authorization: `Bearer ${codeResponse.access_token}`,
+                    Accept: 'application/json'
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                setCurrentUser({
+                    id: data.id,
+                    firstName: data.given_name,
+                    lastName: data.family_name,
+                    email: data.email,
+                    password: 'google password',
+                    isAdmin: true
+                })
+                toast.success('User Login Successfully.');
+                navigate('/');
+            })
+        },
+        onError: (error) => console.log('Login Failed:', error)
+    });
 
     return (
         <section className="bg-indigo-50">
@@ -91,6 +118,16 @@ const LoginPage = ({loginUser}) => {
                         <div className="flex-grow bg bg-gray-300 h-0.5"></div>
                         <div className="flex-grow-0 mx-5">or</div>
                         <div className="flex-grow bg bg-gray-300 h-0.5"></div>
+                    </div>
+
+                    <div className="mb-8">
+                        <button onClick={loginWithGoogle} className='w-full border border-gray-700 rounded-md py-2 px-4 
+                            font-bold text-gray-700 hover:bg-gray-50 flex items-center justify-between'
+                        >
+                            <img src={googleIcon} alt="Google icon" className="w-6 h-6" />
+                            <span>Continue With Google</span>
+                            <span></span>
+                        </button>
                     </div>
 
                     <div>

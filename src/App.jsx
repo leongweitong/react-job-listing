@@ -131,7 +131,7 @@ const App = () => {
 					!currentUser && (
 						<>
 							<Route path="/register" element={ <RegisterPage registerUser={registerUser} /> } />
-							<Route path="/login" element={ <LoginPage loginUser={loginUser} /> } />
+							<Route path="/login" element={ <LoginPage setCurrentUser={setCurrentUser} loginUser={loginUser} /> } />
 						</>
 					)
 				}
