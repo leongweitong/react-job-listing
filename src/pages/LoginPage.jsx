@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 const LoginPage = ({loginUser}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [passwordType, setPasswordType] = useState('password')
     const navigate = useNavigate()
 
     const submitForm = (e) => {
@@ -30,6 +32,8 @@ const LoginPage = ({loginUser}) => {
         
     }
 
+    const triggerPassword = () => setPasswordType(passwordType === 'password' ? 'text' : 'password');
+
     return (
         <section className="bg-indigo-50">
             <div className="container m-auto max-w-2xl py-10 md:py-24">
@@ -53,16 +57,25 @@ const LoginPage = ({loginUser}) => {
 
                         <div className="mb-4">
                             <label htmlFor="password" className="block text-gray-700 font-bold mb-2">Password</label>
-                            <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            className="border rounded w-full py-2 px-3"
-                            placeholder="********"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                            />
+                            <div className="relative">
+                                <input
+                                    type={passwordType}
+                                    id="password"
+                                    name="password"
+                                    className="border rounded w-full py-2 px-3"
+                                    placeholder="********"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
+                                <div className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                                    {passwordType === 'password' ? (
+                                        <FaEyeSlash className='text-gray-700 text-2xl cursor-pointer' onClick={triggerPassword} />
+                                    ) : (
+                                        <FaEye className='text-gray-700 text-2xl cursor-pointer' onClick={triggerPassword} />
+                                    )}
+                                </div>
+                            </div>
                         </div>
 
                         <div>
