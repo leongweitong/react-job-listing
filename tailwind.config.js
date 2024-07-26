@@ -18,8 +18,8 @@ export default {
       animation: {
         fadeInSlide: 'fadeInSlide 1s ease-in-out',
         fadeOutSlide: 'fadeOutSlide 1s ease-in-out',
-        fadeInMenu: 'fadeInMenu 0.5s ease-in-out',
-        fadeOutMenu: 'fadeOutMenu 0.5s ease-in-out',
+        fadeInMenu: 'fadeInMenu 0.3s ease-in-out',
+        fadeOutMenu: 'fadeOutMenu 0.3s ease-in-out',
       },
       keyframes: {
         fadeInSlide: {

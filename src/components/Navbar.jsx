@@ -44,12 +44,12 @@ const Navbar = ({user, logoutUser}) => {
 
 	const handleShowMenu = () => {
 		setAnimationClass('animate-fadeInMenu');
-		setTimeout(() => setShowMenu(true), 500)
+		setTimeout(() => setShowMenu(true), 300)
 	}
 
 	const handleCloseMenu = () => {
 		setAnimationClass('animate-fadeOutMenu');
-		setTimeout(() => setShowMenu(false), 500)
+		setTimeout(() => setShowMenu(false), 300)
 	};
 
 	return (
