@@ -18,6 +18,8 @@ export default {
       animation: {
         fadeInSlide: 'fadeInSlide 1s ease-in-out',
         fadeOutSlide: 'fadeOutSlide 1s ease-in-out',
+        fadeInMenu: 'fadeInMenu 0.5s ease-in-out',
+        fadeOutMenu: 'fadeOutMenu 0.5s ease-in-out',
       },
       keyframes: {
         fadeInSlide: {
@@ -27,6 +29,14 @@ export default {
         fadeOutSlide: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
+        },
+        fadeInMenu: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        fadeOutMenu: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' },
         },
       },
     },
