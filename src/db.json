@@ -99,6 +99,20 @@
       "name": "Legal Counsel"
     }
   ],
+  "heros": [
+    {
+      "id": "1",
+      "name": "hero-1.jpeg"
+    },
+    {
+      "id": "2",
+      "name": "hero-2.jpeg"
+    },
+    {
+      "id": "3",
+      "name": "hero-3.jpeg"
+    }
+  ],
   "jobs": [
     {
       "id": "1",
