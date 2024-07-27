@@ -68,7 +68,7 @@ const AddJobPage = ({ user, addJobSubmit }) => {
                         <select id="categoryId" name="categoryId" className="border rounded w-full py-2 px-3"
                             value={categoryId} onChange={(e) => setCategoryId(e.target.value)} required
                         >
-                            <option value='' selected disabled>Please Select Job Category</option> 
+                            <option value='' disabled>Please Select Job Category</option> 
                             {categories.map(category => (<option key={category.id} value={category.id}>{category.name}</option>))}
                         </select>
                     </div>
