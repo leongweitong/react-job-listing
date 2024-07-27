@@ -9,6 +9,8 @@ const AddJobPage = ({ user, addJobSubmit }) => {
     const [location, setLocation] = useState('')
     const [description, setDescription] = useState('')
     const [salary, setSalary] = useState('Under $50K')
+    const [categoryId, setCategoryId] = useState('')
+    const [categories, setCategories] = useState([])
     const [companyName, setCompanyName] = useState('')
     const [companyDescription, setCompanyDescription] = useState('')
     const [contactEmail, setContactEmail] = useState('')
@@ -19,6 +21,14 @@ const AddJobPage = ({ user, addJobSubmit }) => {
     useEffect(() => {
         if(user && !user.isAdmin) navigate('/not-admin')
         if (!user) navigate('/login')
+
+        const getAllCategories = async () => {
+            const res = await fetch('/api/categories')
+            const data = await res.json()
+            setCategories(data)
+        }
+        getAllCategories()
+
     }, [user])
 
     const submitForm = (e) => {
@@ -30,6 +40,7 @@ const AddJobPage = ({ user, addJobSubmit }) => {
             description,
             location,
             salary,
+            categoryId,
             company: {
                 name: companyName,
                 description: companyDescription,
@@ -51,6 +62,16 @@ const AddJobPage = ({ user, addJobSubmit }) => {
                 <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
                     <form onSubmit={submitForm}>
                     <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
+
+                    <div className="mb-4">
+                        <label htmlFor="categoryId" className="block text-gray-700 font-bold mb-2">Job Category</label>
+                        <select id="categoryId" name="categoryId" className="border rounded w-full py-2 px-3"
+                            value={categoryId} onChange={(e) => setCategoryId(e.target.value)} required
+                        >
+                            <option value='' selected disabled>Please Select Job Category</option> 
+                            {categories.map(category => (<option key={category.id} value={category.id}>{category.name}</option>))}
+                        </select>
+                    </div>
 
                     <div className="mb-4">
                         <label htmlFor="type" className="block text-gray-700 font-bold mb-2">Job Type</label>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useLoaderData, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
@@ -11,12 +11,23 @@ const EditJobPage = ({editJob}) => {
     const [location, setLocation] = useState(job.location)
     const [description, setDescription] = useState(job.description)
     const [salary, setSalary] = useState(job.salary)
+    const [categoryId, setCategoryId] = useState(job.categoryId)
+    const [categories, setCategories] = useState([])
     const [companyName, setCompanyName] = useState(job.company.name)
     const [companyDescription, setCompanyDescription] = useState(job.company.description)
     const [contactEmail, setContactEmail] = useState(job.company.contactEmail)
     const [contactPhone, setContactPhone] = useState(job.company.contactPhone)
 
     const navigate = useNavigate()
+
+    useEffect(() => {
+        const getAllCategories = async () => {
+            const res = await fetch('/api/categories')
+            const data = await res.json()
+            setCategories(data)
+        }
+        getAllCategories()
+    }, [])
 
     const submitForm = (e) => {
         e.preventDefault()
@@ -28,6 +39,7 @@ const EditJobPage = ({editJob}) => {
             description,
             location,
             salary,
+            categoryId,
             company: {
                 name: companyName,
                 description: companyDescription,
@@ -52,6 +64,15 @@ const EditJobPage = ({editJob}) => {
                 <form onSubmit={submitForm}>
                 <h2 className="text-3xl text-center font-semibold mb-6">Edit Job</h2>
 
+                <div className="mb-4">
+                    <label htmlFor="categoryId" className="block text-gray-700 font-bold mb-2">Job Category</label>
+                    <select id="categoryId" name="categoryId" className="border rounded w-full py-2 px-3"
+                        value={categoryId} onChange={(e) => setCategoryId(e.target.value)} required
+                    >
+                        {categories.map(category => (<option key={category.id} value={category.id}>{category.name}</option>))}
+                    </select>
+                </div>
+                
                 <div className="mb-4">
                     <label htmlFor="type" className="block text-gray-700 font-bold mb-2"
                     >Job Type</label

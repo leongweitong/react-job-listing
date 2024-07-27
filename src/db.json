@@ -488,6 +488,21 @@
         "contactEmail": "hr@lawtechfirm.com",
         "contactPhone": "555-123-4567"
       }
+    },
+    {
+      "id": "f25b",
+      "title": "Laravel Developer",
+      "type": "Part-Time",
+      "description": "Using laravel and mysql developer backend code.",
+      "location": "Johor, Malaysia",
+      "salary": "$100K - 125K",
+      "categoryId": "18",
+      "company": {
+        "name": "LaraJobs",
+        "description": "Help other design website",
+        "contactEmail": "test@gmail.com",
+        "contactPhone": "5555-5555-555"
+      }
     }
   ]
 }
