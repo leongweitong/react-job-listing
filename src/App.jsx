@@ -10,6 +10,7 @@ import EditJobPage from './pages/EditJobPage'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import NotAdminPage from './pages/NotAdminPage'
+import AddCategoryPage from './pages/AddCategoryPage'
 
 const App = () => {
 	const [currentUser, setCurrentUser] = useState(null)
@@ -141,6 +142,7 @@ const App = () => {
 					currentUser && currentUser.isAdmin && <Route path="/edit-job/:id" element={ <EditJobPage editJob={editJob} /> } loader={jobLoader} />
 				}
 				<Route path="/add-job" element={ <AddJobPage user={currentUser} addJobSubmit={addJob} /> } />
+				<Route path="/add-category" element={ <AddCategoryPage user={currentUser} /> } />
 				<Route path="/not-admin" element={ <NotAdminPage /> } />
 				<Route path="*" element={ <NotFoundPage /> } />
 			</Route>

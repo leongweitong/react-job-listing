@@ -69,6 +69,10 @@ const Navbar = ({user, logoutUser}) => {
 					<span>Add Job</span>
 					<FaAngleRight className='text-2xl font-light'  />
 				</NavLink>}
+				{user && user.isAdmin && <NavLink to="/add-category" className='flex items-center justify-between py-3 border-b' onClick={handleCloseMenu}>
+					<span>Add Category</span>
+					<FaAngleRight className='text-2xl font-light'  />
+				</NavLink>}
 				{user && <button type='button' onClick={logout} className='flex items-center justify-between py-3 border-b text-left'>
 					<span>Logout</span>
 					<FaAngleRight className='text-2xl font-light'  />
@@ -97,6 +101,7 @@ const Navbar = ({user, logoutUser}) => {
 							<NavLink to="/" className={linkClass}>Home</NavLink>
 							<NavLink to="/jobs" className={linkClass}>Jobs</NavLink>
 							{user && user.isAdmin && <NavLink to="/add-job" className={linkClass}>Add Job</NavLink>}
+							{user && user.isAdmin && <NavLink to="/add-category" className={linkClass}>Add Category</NavLink>}
 							{user && <button type='button' onClick={logout} className='hidden md:block text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Logout</button>}
 							{!user && <NavLink to="/login" className={linkClass}>Login</NavLink>}
 							<FaBars onClick={handleShowMenu} className='md:hidden text-white self-center cursor-pointer text-3xl' />
