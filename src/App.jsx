@@ -11,6 +11,7 @@ import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import NotAdminPage from './pages/NotAdminPage'
 import AddCategoryPage from './pages/AddCategoryPage'
+import ApplyJob from './pages/ApplyJob'
 
 const App = () => {
 	const [currentUser, setCurrentUser] = useState(null)
@@ -138,6 +139,7 @@ const App = () => {
 				}
 				<Route path="/jobs" element={ <JobsPage categories={categoriesWithJobCount} /> } />
 				<Route path="/jobs/:id" element={ <JobPage deleteJob={deleteJob} user={currentUser} /> } loader={jobLoader} />
+				<Route path="/apply-job/:id" element={ <ApplyJob user={currentUser} /> } loader={jobLoader} />
 				{
 					currentUser && currentUser.isAdmin && <Route path="/edit-job/:id" element={ <EditJobPage editJob={editJob} /> } loader={jobLoader} />
 				}
