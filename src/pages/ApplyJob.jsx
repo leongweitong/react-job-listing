@@ -91,7 +91,7 @@ const ApplyJob = ({user}) => {
                         <div className='font-semibold text-2xl text-gray-800 mb-2'>Upload Resume</div>
                         <input type="file" id="resume" name="resume" onChange={handleFileChange}  accept="application/pdf"
                             className="block w-full text-sm text-gray-900 border rounded-lg cursor-pointer bg-white mb-2"
-                            aria-describedby="file_input_help"
+                            aria-describedby="file_input_help" required
                         />
                         <p id="file_input_help" className="text-sm text-gray-500 mb-2">Please upload your resume in PDF format.</p>
                         {pdf && <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.js`}>
