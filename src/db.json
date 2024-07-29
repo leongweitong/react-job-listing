@@ -114,7 +114,30 @@
     }
   ],
   "applications": [
-    
+    {
+      "id": "13ec",
+      "user": {
+        "id": "114311959633099673144",
+        "firstName": "WEI TONG",
+        "lastName": "LEONG",
+        "email": "weitong0724@gmail.com"
+      },
+      "jobId": "1",
+      "status": "pending",
+      "resume": "LeongWeiTong_Resume.pdf"
+    },
+    {
+      "id": "7680",
+      "user": {
+        "id": "090b",
+        "firstName": "test",
+        "lastName": "test",
+        "email": "test@gmail.com"
+      },
+      "jobId": "1",
+      "status": "pending",
+      "resume": "LeongWeiTong_Resume.pdf"
+    }
   ],
   "jobs": [
     {
