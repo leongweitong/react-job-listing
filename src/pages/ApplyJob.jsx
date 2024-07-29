@@ -12,7 +12,7 @@ const ApplyJob = ({user}) => {
     const [lastName, setLastName] = useState(user?.lastName || '')
     const [email, setEmail] = useState(user?.email || '')
     const [resume, setResume] = useState(null)
-    const pdfjsVersion = packageJson.dependencies['pdfjs-dist'].slice(1)
+    const pdfjsVersion = packageJson.dependencies['pdfjs-dist']
 
     const handleFileChange = (e) => {
         const file = e.target.files[0]
